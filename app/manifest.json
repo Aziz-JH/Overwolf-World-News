@@ -1,0 +1,38 @@
+{
+  "manifest_version":1,
+  "type":"WebApp",
+  "meta":{
+    "name":"World News",
+    "version":"0.0.1",
+    "minimum-overwolf-version":"0.83.0",
+    "author":"Julian Aziz Haslinger",
+    "description":"World News - Always up to date",
+    "icon": "IconMouseNormal.png",
+    "icon_gray": "IconMouseOver.png"
+  },
+  "data": {
+    "start_window":"index",
+    "windows":{
+      "index":{
+        "file":"templates/index.html",
+        "transparent":true,
+        "resizable":true,
+        "size":{"width":615, "height":660},
+        "min_size":{"width":280, "height":310},
+        "ignore_keyboard_events":false,
+        "show_in_taskbar":true,
+        "in_game_only": false,
+        "grab_keyboard_focus": false
+      }
+    }
+  },
+  "permissions": [
+    "Extensions"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.google.com",
+      "http://*.aziz.wtf"
+    ]
+  }
+}

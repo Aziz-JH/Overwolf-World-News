@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>World News</title>
+	<link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,100" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="/src/css/style.css" rel="stylesheet">
+	<script src="https://www.google.com/jsapi"></script>
+	<script src="/src/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script>
+		function closeNewsWindow() {
+			overwolf.windows.getCurrentWindow(function(result) {
+				overwolf.windows.close(result.window.id);
+			});
+		}
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="settings">
+		<div class="headline" data-i18n="SETTINGS"></div>
+		<div class="widget">
+			<label for="settingsLanguage" data-i18n="LANGUAGE" style="line-height: 12px;"></label>
+			<select id="settingsLanguage" onchange="changeSearch();i18nInt()">
+				<option value="de">deutsch</option>
+				<option value="en">english</option>
+			</select>
+		</div>
+		<div class="widget">
+			<label for="settingsRegion" data-i18n="REGION"></label>
+			<select id="settingsRegion" onchange="changeSearch()">
+				<optgroup label="Asia">
+					<option value="au">Australia</option>
+					<option value="in">India</option>
+					<option value="en_il">Israel</option>
+					<option value="en_my">Malaysia</option>
+					<option value="nz">New Zealand</option>
+					<option value="en_pk">Pakistan</option>
+					<option value="en_ph">Philippines</option>
+					<option value="en_sg">Singapore</option>
+					<option value="ar_me">العالم العربي (Arab world)</option>
+					<option value="ar_ae">الإمارات (UAE)</option>
+					<option value="ar_lb">لبنان (Lebanon)</option>
+					<option value="ar_sa">السعودية (KSA)</option>
+					<option value="cn">中国版 (China)</option>
+					<option value="hk">香港版 (Hong Kong)</option>
+					<option value="hi_in">भारत (India)</option>
+					<option value="ta_in">தமிழ்(India)</option>
+					<option value="ml_in">മലയാളം (India)</option>
+					<option value="te_in">తెలుగు (India)</option>
+					<option value="iw_il">ישראל (Israel)</option>
+					<option value="jp">日本 (Japan)</option>
+					<option value="kr">한국 (Korea)</option>
+					<option value="tw">台灣版 (Taiwan)</option>
+					<option value="vi_vn">Việt Nam (Vietnam)&lrm;</option>
+				</optgroup>
+				<optgroup label="Europe & Africa">
+					<option value="nl_be">België</option>
+					<option value="fr_be">Belgique</option>
+					<option value="en_bw">Botswana</option>
+					<option value="s_cz">Česká republika</option>
+					<option value="de">Deutschland</option>
+					<option value="es">España</option>
+					<option value="en_et">Ethiopia</option>
+					<option value="fr">France</option>
+					<option value="en_gh">Ghana</option>
+					<option value="en_ie">Ireland</option>
+					<option value="it">Italia</option>
+					<option value="en_ke">Kenya</option>
+					<option value="hu_hu">Magyarország</option>
+					<option value="fr_ma">Moroc</option>
+					<option value="en_na">Namibia</option>
+					<option value="nl_nl">Nederland</option>
+					<option value="en_ng">Nigeria</option>
+					<option value="no_no">Norge</option>
+					<option value="de_at">Österreich</option>
+					<option value="pl_pl">Polska</option>
+					<option value="pt-PT_pt">Portugal</option>
+					<option value="de_ch">Schweiz</option>
+					<option value="fr_sn">Sénégal</option>
+					<option value="en_za">South Africa</option>
+					<option value="fr_ch">Suisse</option>
+					<option value="sv_se">Sverige</option>
+					<option value="en_tz">Tanzania</option>
+					<option value="tr_tr">Türkiye</option>
+					<option value="en_ug">Uganda</option>
+					<option value="uk">U.K.</option>
+					<option value="en_zw">Zimbabwe</option>
+					<option value="ar_eg">مصر (Egypt)</option>
+					<option value="el_gr">Ελλάδα (Greece)</option>
+					<option value="ru_ru">Россия (Russia)</option>
+					<option value="sr_rs"> Србија (Serbia)</option>
+					<option value="ru_ua">Украина (Ukraine)</option>
+					<option value="uk_ua">Україна (Ukraine)</option>
+				</optgroup>
+				<optgroup label="North & South America">
+					<option value="es_ar">Argentina</option>
+					<option value="pt-BR_br">Brasil</option>
+					<option value="ca">Canada English</option>
+					<option value="fr_ca">Canada Français</option>
+					<option value="es_cl">Chile</option>
+					<option value="es_co">Colombia</option>
+					<option value="es_cu"> Cuba</option>
+					<option value="es_us">Estados Unidos</option>
+					<option value="es_mx">México</option>
+					<option value="es_pe">Perú</option>
+					<option value="us">U.S.</option>
+					<option value="es_ve">Venezuela</option>
+				</optgroup>
+			</select>
+		</div>
+		<div class="clear"></div>
+		<div class="branding">
+			<a style="float: left;" href="https://www.google.com/" target="_blank"><img src="/src/images/powered-by-google-on-non-white.png" alt="powerd by google" height="16" width="104" /></a>
+			<a style="float: right;font-size: 11px;" href="http://goo.gl/6W6xZJ" target="_blank">created by Julian Aziz Haslinger</a>
+		</div>
+	</div>
+	<header id="header">
+		<div class="dragger" onmousedown="dragMove()"></div>
+		<div class="text" data-i18n="NEWS"></div>
+		<input id="inputText" onkeyup="changeSearch()" placeholder="Suche...">
+		<select id="selectTopic" onchange="changeSearch()">
+			<option value="" data-i18n="SEARCH_PLACEHOLDER">Suche...</option>
+			<option value="h" data-i18n="HEADLINES">Schlagzeilen</option>
+			<option value="w" data-i18n="INTERNATIONAL">International</option>
+			<option value="n" id="selectOptionLocal"></option>
+			<option value="b" data-i18n="INDUSTRY">Wirtschaft</option>
+			<option value="t" data-i18n="TECHNOLOGY">Wissen/Technik</option>
+			<option value="e" data-i18n="ENTERTAINMENT">Unterhaltung</option>
+			<option value="s" data-i18n="SPORT">Sport</option>
+			<option value="m" data-i18n="HEALTH">Gesundheit</option>
+			<option value="ir" data-i18n="PANORAMA">Panorama</option>
+			<option value="p" data-i18n="POLITICS">Politik</option>
+			<!--<option value="snc">Science (only US)</option>
+			<option value="el">elections topic</option>-->
+		</select>
+		<div class="settings" onclick="toggleSettings()"><i class="material-icons">settings</i></div>
+		<div class="close" onclick="closeNewsWindow()"><i class="material-icons">close</i></div>
+		<div class="resizeRight" onmousedown="dragResize('Right')"></div>
+	</header>
+	<div id="newsWrapper">
+		<div id="newsList"></div>
+		<div id="loadMore"></div>
+	</div>
+	<footer id="footer" onmousedown="dragResize('Bottom')"></footer>
+</div>
+<script src="/src/js/config.js"></script>
+<script src="/src/js/i18n.js"></script>
+<script src="/src/lib/moment/moment.js"></script>
+<script src="/src/js/helper.js"></script>
+<script src="/src/lib/storejs/store.min.js"></script>
+<script src="/src/js/ls.js"></script>
+<script src="/src/js/index.js"></script>
+<script src="/src/js/ga.js"></script>
+<script>ga.start('index');</script>
+</body>
+</html>
+

@@ -1,0 +1,374 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%; }
+
+body {
+  font: 400 16px/24px Roboto,sans-serif;
+  font-family: RobotoDraft, Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow: hidden; }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  outline: 0;
+  -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 12px;
+  line-height: 16px; }
+
+.clear {
+  clear: both; }
+
+::-webkit-scrollbar {
+  box-sizing: border-box;
+  padding: 0;
+  display: block;
+  width: 3px;
+  position: relative;
+  overflow: visible; }
+
+::-webkit-scrollbar-track {
+  background-color: rgba(76, 175, 80, 0.1);
+  width: 100%;
+  margin: auto;
+  display: block; }
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  margin: 0 1px;
+  background: #4CAF50;
+  position: relative; }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #66BB6A; }
+  ::-webkit-scrollbar-thumb:active {
+    background: #43A047; }
+
+#wrapper {
+  height: 100%; }
+  #wrapper.openSettings #header > .settings {
+    opacity: 0.6; }
+  #wrapper.openSettings #settings {
+    box-shadow: rgba(0, 0, 0, 0.25882) 0 2px 5px 0;
+    transform: translateY(0px); }
+
+#settings {
+  transform: translateY(-125px);
+  top: 50px;
+  background: #2E7D32;
+  position: absolute;
+  height: 125px;
+  width: 100%;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.25882) 0 0 0 0;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 2px 2px 0 0;
+  z-index: 3; }
+  #settings > .headline {
+    font-weight: bold;
+    font-size: 16px;
+    float: left;
+    line-height: 24px; }
+  #settings > .widget {
+    float: right;
+    width: 340px;
+    margin-bottom: 5px; }
+    #settings > .widget label {
+      float: left;
+      display: block;
+      width: 180px;
+      text-align: right;
+      box-sizing: border-box;
+      line-height: 30px;
+      padding: 0 5px 0 0; }
+    #settings > .widget select {
+      border-radius: 2px;
+      border: 0;
+      height: 30px;
+      padding: 8px;
+      box-sizing: border-box;
+      width: 160px;
+      background: #43A047;
+      color: #fff; }
+      #settings > .widget select:hover {
+        background: #4CAF50;
+        color: #fff; }
+      #settings > .widget select:focus {
+        border-radius: 2px 2px 0 2px;
+        background: #fff;
+        color: #000; }
+  #settings > .branding {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    color: #f3f3f3; }
+
+#header {
+  box-shadow: rgba(0, 0, 0, 0.25882) 0 2px 5px 0;
+  background: #1B5E20;
+  margin-bottom: 4px;
+  position: fixed;
+  z-index: 4;
+  height: 50px;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  #header > .dragger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1; }
+  #header > .text {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: -2; }
+  #header > .resizeRight {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background: #1B5E20;
+    cursor: e-resize; }
+  #header > .close {
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    height: 24px;
+    width: 24px;
+    font-size: 26px;
+    line-height: 20px;
+    margin: 12px;
+    opacity: 0.8;
+    padding-top: 1px; }
+    #header > .close:hover {
+      opacity: 0.6; }
+  #header > .settings {
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    right: 34px;
+    height: 24px;
+    width: 24px;
+    font-size: 26px;
+    line-height: 20px;
+    margin: 12px;
+    opacity: 0.8;
+    padding-top: 1px; }
+    #header > .settings:hover {
+      opacity: 0.6; }
+
+#inputText {
+  box-shadow: rgba(255, 255, 255, 0.5) 0 0 20px -4px inset;
+  border-radius: 2px 0 0 2px;
+  border: 0;
+  height: 30px;
+  padding: 8px;
+  box-sizing: border-box;
+  width: 200px;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  background: #43A047;
+  cursor: default;
+  color: #fff;
+  z-index: 1;
+  border-right: 1px solid #1B5E20; }
+  #inputText::-webkit-input-placeholder {
+    color: #fff; }
+  #inputText:hover {
+    background: #4CAF50;
+    cursor: text;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 0 inset; }
+  #inputText:focus {
+    background: #fff;
+    cursor: text;
+    color: #000;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 0 inset; }
+
+#selectTopic {
+  border-radius: 2px;
+  border: 0;
+  height: 30px;
+  padding: 8px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  width: 220px;
+  background: #43A047;
+  color: #fff; }
+  #selectTopic:hover {
+    background: #4CAF50;
+    color: #fff; }
+  #selectTopic:focus {
+    border-radius: 2px 2px 0 2px;
+    background: #fff;
+    color: #000; }
+
+#newsWrapper {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0 0 0 5px;
+  height: 100%;
+  padding-right: 2px;
+  padding-top: 50px; }
+  #newsWrapper #newsList > .news {
+    overflow: hidden;
+    background: #43A047;
+    color: #fff;
+    padding: 0;
+    margin: 0 0 3px;
+    position: relative;
+    min-height: 126px;
+    font-weight: 500;
+    box-shadow: rgba(0, 0, 0, 0.25882) 0 2px 5px 0; }
+    #newsWrapper #newsList > .news:last-child {
+      margin-bottom: 0; }
+    #newsWrapper #newsList > .news:hover {
+      background: #4CAF50; }
+      #newsWrapper #newsList > .news:hover > .publisher {
+        background: #4CAF50; }
+    #newsWrapper #newsList > .news:active {
+      background: #66BB6A; }
+      #newsWrapper #newsList > .news:active > .publisher {
+        background: #66BB6A; }
+    #newsWrapper #newsList > .news > .title {
+      font-weight: bold;
+      margin: 15px 0 0 0;
+      font-size: 14px;
+      height: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 15px;
+      text-overflow: ellipsis; }
+    #newsWrapper #newsList > .news > .description {
+      margin: 5px 15px 0 15px; }
+      #newsWrapper #newsList > .news > .description img {
+        float: left;
+        margin: 0 10px 0 0;
+        display: block;
+        border-radius: 2px;
+        overflow: hidden; }
+      #newsWrapper #newsList > .news > .description p {
+        margin: 0;
+        height: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+    #newsWrapper #newsList > .news > .publisher {
+      position: absolute;
+      top: 95px;
+      left: 15px;
+      font-size: 10px;
+      background: #43A047; }
+
+#loadMore > span {
+  display: block;
+  background: #43A047;
+  color: #fff;
+  cursor: default;
+  position: relative;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+  box-shadow: rgba(0, 0, 0, 0.25882) 0 2px 5px 0;
+  margin: 4px 0;
+  border-radius: 2%;
+  overflow: hidden;
+  text-align: center; }
+  #loadMore > span:hover {
+    background: #4CAF50; }
+  #loadMore > span:active {
+    background: #66BB6A; }
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  height: 4px;
+  background: #1B5E20;
+  width: 100%;
+  cursor: n-resize; }
+
+@media (min-width: 500px) and (max-width: 600px) {
+  #header > .text {
+    width: 80%; } }
+@media (min-width: 400px) and (max-width: 499px) {
+  #header > .text {
+    width: 70%; }
+
+  #selectTopic {
+    width: 150px; }
+
+  #inputText {
+    width: 130px; }
+
+  #settings > .widget {
+    width: auto; }
+    #settings > .widget label {
+      width: 80px; } }
+@media (min-width: 300px) and (max-width: 399px) {
+  #header > .text {
+    width: 70%; }
+
+  #selectTopic {
+    width: 150px; }
+
+  #inputText {
+    width: 130px; }
+
+  #settings > .widget {
+    width: auto; }
+    #settings > .widget label {
+      width: 80px; } }
+@media (min-width: 0px) and (max-width: 299px) {
+  #header > .text {
+    width: 70%; }
+
+  #selectTopic {
+    width: 120px; }
+
+  #inputText {
+    width: 100px; }
+
+  #settings > .widget {
+    width: auto; }
+    #settings > .widget label {
+      width: 80px; } }
