@@ -3,7 +3,7 @@
   "type":"WebApp",
   "meta":{
     "name":"World News",
-    "version":"0.0.1",
+    "version":"0.0.2",
     "minimum-overwolf-version":"0.83.0",
     "author":"Julian Aziz Haslinger",
     "description":"World News - Always up to date",
