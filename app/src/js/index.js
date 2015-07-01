@@ -5,7 +5,10 @@
 		var arrI18nDOM = document.querySelectorAll('*[data-i18n]');
 		var storeSearchObj = ls.get('searchObj');
 		if (typeof storeSearchObj == 'undefined') {
-			storeSearchObj.lang = 'en';
+			storeSearchObj = {
+				lang: 'en'
+			};
+			//storeSearchObj.lang = 'en';
 		}
 		var lang = storeSearchObj.lang;
 		var _i18n = i18n[lang];
