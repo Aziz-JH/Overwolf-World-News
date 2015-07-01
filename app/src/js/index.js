@@ -55,7 +55,7 @@
 		$selectOptionLocal = document.getElementById('selectOptionLocal'),
 		searchObj = {
 			text: '',
-			region: 'en',
+			region: 'us',
 			lang: 'en',
 			topic: 'h',
 			sort: 'relevance',
