@@ -329,7 +329,10 @@ a {
 
 @media (min-width: 500px) and (max-width: 600px) {
   #header > .text {
-    width: 80%; } }
+    width: 80%; }
+
+  #settings > .widget label {
+    line-height: 12px; } }
 @media (min-width: 400px) and (max-width: 499px) {
   #header > .text {
     width: 70%; }
@@ -343,7 +346,8 @@ a {
   #settings > .widget {
     width: auto; }
     #settings > .widget label {
-      width: 80px; } }
+      width: 80px;
+      line-height: 12px; } }
 @media (min-width: 300px) and (max-width: 399px) {
   #header > .text {
     width: 70%; }
@@ -357,7 +361,8 @@ a {
   #settings > .widget {
     width: auto; }
     #settings > .widget label {
-      width: 80px; } }
+      width: 80px;
+      line-height: 12px; } }
 @media (min-width: 0px) and (max-width: 299px) {
   #header > .text {
     width: 70%; }
@@ -371,4 +376,5 @@ a {
   #settings > .widget {
     width: auto; }
     #settings > .widget label {
-      width: 80px; } }
+      width: 80px;
+      line-height: 12px; } }
